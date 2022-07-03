@@ -1,0 +1,8 @@
+import os
+
+Import('env')
+
+src = Glob("*.cpp")
+for f in src:
+    name = os.path.basename(str(f))[:-4]
+    env.Program(name, f)
